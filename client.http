@@ -1,0 +1,13 @@
+# @name POST
+POST http://127.0.0.1:3333/events
+#Headers
+Content-Type: application/json 
+
+#Content Request Body
+{
+
+    "title": "Unite Summit",
+    "details": "Um evento para quem é apaixonado por programação",
+    "maximumAttendees": 100
+
+}
