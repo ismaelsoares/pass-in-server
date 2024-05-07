@@ -1,20 +1,18 @@
-import fastify from "fastify";
+import { fastify } from "fastify";
+import {
+  serializerCompiler,
+  validatorCompiler,
+} from "fastify-type-provider-zod";
+import { createEvent } from "./routes/create-event";
 
 const app = fastify({
   logger: true,
 });
 
-// Métodos HTTP: GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS...
-// Corpo da requisição (Request Body)
-// Parâmetros de busca (Search Params, Query Params)
-// Parâmetros de rota (Route params) => Identificação de recursos
-// Cabeçalhos (Headers) => Contexto da requisição
+app.setValidatorCompiler(validatorCompiler);
+app.setSerializerCompiler(serializerCompiler);
 
-app.post("/events", (request, reply) => {
-  console.log(request.body);
-
-  return request.body;
-});
+app.register(createEvent);
 
 app
   .listen({ port: 3333 })

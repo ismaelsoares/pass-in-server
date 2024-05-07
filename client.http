@@ -6,8 +6,8 @@ Content-Type: application/json
 #Content Request Body
 {
 
-    "title": "Unite Summit",
-    "details": "Um evento para quem é apaixonado por programação",
+    "title": "Unite Summit Dev 2024",
+    "details": "Um evento para quem é apaixonado por programação e tecnologia",
     "maximumAttendees": 100
 
 }
